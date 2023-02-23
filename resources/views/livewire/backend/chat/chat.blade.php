@@ -6,10 +6,12 @@
                     <h6 class="mb-0">Chat List</h6>
                 </div>
                 <div class="dropdown">
-                    <div class="cursor-pointer font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">
+                    <div class="cursor-pointer font-24 dropdown-toggle dropdown-toggle-nocaret"
+                        data-bs-toggle="dropdown">
                         <i class="bx bx-dots-horizontal-rounded"></i>
                     </div>
-                    <div class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="javascript:;">Settings</a>
+                    <div class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item"
+                            href="javascript:;">Settings</a>
                         <div class="dropdown-divider"></div> <a class="dropdown-item" href="javascript:;">Help &amp;
                             Feedback</a>
                         <a class="dropdown-item" href="javascript:;">Enable Split View Mode</a>
@@ -38,23 +40,8 @@
         <!-- /.chat-sidebar-content -->
     </div>
     <!-- /.chat-sidebar -->
-    <div class="chat-header d-flex align-items-center">
-        <div class="chat-toggle-btn"><i class="bx bx-menu-alt-left"></i>
-        </div>
-        <div>
-            <h4 class="mb-1 font-weight-bold">Harvey Inspector</h4>
-            <div class="list-inline d-sm-flex mb-0 d-none"> <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary"><small class="bx bxs-circle me-1 chart-online"></small>Active Now</a>
-                <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary">|</a>
-                <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary"><i class="bx bx-images me-1"></i>Gallery</a>
-                <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary">|</a>
-                <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary"><i class="bx bx-search me-1"></i>Find</a>
-            </div>
-        </div>
-        <div class="chat-top-header-menu ms-auto"> <a href="javascript:;"><i class="bx bx-video"></i></a>
-            <a href="javascript:;"><i class="bx bx-phone"></i></a>
-            <a href="javascript:;"><i class="bx bx-user-plus"></i></a>
-        </div>
-    </div>
+    <livewire:backend.chat.chat-header />
+
     <div class="chat-content ps ps--active-y">
         <div class="chat-content-leftside">
             <div class="d-flex">
@@ -153,7 +140,7 @@
 
 @push('dynamic_js')
 <script type="module">
-    new PerfectScrollbar('.chat-list');
-    new PerfectScrollbar('.chat-content');
+new PerfectScrollbar('.chat-list');
+new PerfectScrollbar('.chat-content');
 </script>
 @endpush
