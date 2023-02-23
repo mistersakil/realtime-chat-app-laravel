@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Backend\Pages\Chat\Chat;
+use App\Http\Livewire\Backend\Chat\Chat;
 use App\Http\Livewire\Backend\Pages\Dashboard\Dashboard;
 
 
