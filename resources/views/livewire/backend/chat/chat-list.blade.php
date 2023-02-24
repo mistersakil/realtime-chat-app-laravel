@@ -60,18 +60,7 @@
                 <div class="chat-time">9/3/2020</div>
             </div>
         </a>
-        <a href="javascript:;" class="list-group-item">
-            <div class="d-flex">
-                <div class="chat-user-online">
-                    <img src="{{ Vite::image('avatar-1.png') }}" width="42" height="42" class="rounded-circle" alt="">
-                </div>
-                <div class="flex-grow-1 ms-2">
-                    <h6 class="mb-0 chat-title">Harold Gunderson</h6>
-                    <p class="mb-0 chat-msg">Thanks Mike! :)</p>
-                </div>
-                <div class="chat-time">12/3/2020</div>
-            </div>
-        </a>
+
         <a href="javascript:;" class="list-group-item">
             <div class="d-flex">
                 <div class="chat-user-online">
