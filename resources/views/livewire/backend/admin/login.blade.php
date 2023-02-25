@@ -5,46 +5,50 @@
                 <h3 class="text-muted">Admin Login</h3>
             </div>
             <div class="form-body">
-                <form class="row g-3">
+                <form class="row g-3" autocomplete="off" wire:submit.prevent="login_process">
                     <div class="col-12">
-                        <label for="inputEmailAddress" class="form-label">
+                        <label for="email" class="form-label">
                             <i class="bx bxs-envelope"></i>
-                            Email Address
+                            {{ __('Email Address') }}
                         </label>
-                        <input type="email" class="form-control" id="inputEmailAddress" placeholder="Email Address">
+                        <input wire:model.lazy="email" type="text" class="form-control" id="email"
+                            placeholder="{{ __('Enter your email address') }}">
                     </div>
                     <!-- /.col -->
+
                     <div class="col-12">
-                        <label for="inputChoosePassword" class="form-label">
+                        <label for="password" class="form-label">
                             <i class="bx bxs-lock-alt"></i>
-                            Enter Password
+                            {{ __('Enter Password') }}
                         </label>
                         <div class="input-group" id="show_hide_password">
-                            <input type="password" class="form-control border-end-0" id="inputChoosePassword"
-                                value="12345678" placeholder="Enter Password"> <a href="javascript:;"
-                                class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
+                            <input wire:model.lazy="password" type="password" class="form-control border-end-0"
+                                id="password" value="12345678" placeholder="{{ __('Enter your password') }}">
+                            <a href="javascript:void(0)" class="input-group-text bg-transparent">
+                                <i class='bx bx-hide'></i>
+                            </a>
                         </div>
                     </div>
                     <!-- /.col -->
+
                     <div class="col-md-6">
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-                            <label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
+                            <input class="form-check-input" type="checkbox" id="remeber_me" checked>
+                            <label class="form-check-label" for="remeber_me">{{ __('Remember Me') }}</label>
                         </div>
                     </div>
                     <!-- /.col -->
-                    <div class="col-md-6 text-end"> <a href="authentication-forgot-password.html">Forgot Password ?</a>
-                    </div>
-                    <!-- /.col -->
+
                     <div class="col-12">
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary">
                                 <i class="bx bxs-lock-open"></i>
-                                Sign in
+                                {{ __('Login') }}
                             </button>
                         </div>
                     </div>
                     <!-- /.col -->
+
                 </form>
                 <!-- /.row -->
             </div>
