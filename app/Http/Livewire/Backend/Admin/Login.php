@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Backend\Admin;
 
+use App\Models\User;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
@@ -62,7 +63,9 @@ class Login extends Component
         $this->validate();
 
         ## Attempt to login
-        if (Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
+        if (Auth::attemptWhen(['email' => $this->email, 'password' => $this->password], function (User $user) {
+            return $user->is_active == 2;
+        })) {
             request()->session()->regenerate();
             return redirect()->intended('admin');
         } else {
