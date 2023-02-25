@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Backend\Admin;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 
 class Login extends Component
 {
@@ -15,8 +16,19 @@ class Login extends Component
      * @var array
      */
     protected $rules = [
-        'email' => ['required', 'email'],
-        'password' => ['required', 'min:8'],
+        'email'             => ['required', 'email'],
+        'password'          => ['required', 'min:8'],
+    ];
+
+    /**
+     * Customize the validation messages
+     * @var array
+     */
+    protected $messages = [
+        'email.required'    => 'Email can not be empty',
+        'email.email'       => 'Email format is invalid',
+        'password.required' => 'Password can not be empty',
+        'password.min'      => 'Password minimum length is 8',
     ];
 
     /**
@@ -27,14 +39,24 @@ class Login extends Component
     public function mount()
     {
         $this->email = '';
-        $this->password = '12345678#';
+        $this->password = '';
+    }
+
+    /**
+     * To validate an input field after every update
+     * @return void
+     */
+
+    public function updated($propertyName): void
+    {
+        $this->validateOnly($propertyName);
     }
 
     /**
      * Login process
-     * @return admin 
+     * @return \Illuminate\Http\RedirectResponse 
      */
-    public function login_process()
+    public function login_process(): RedirectResponse
     {
 
         ## Validate rules

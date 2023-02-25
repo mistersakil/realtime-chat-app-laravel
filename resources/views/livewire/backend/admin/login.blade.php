@@ -5,29 +5,49 @@
                 <h3 class="text-muted">Admin Login</h3>
             </div>
             <div class="form-body">
-                <form class="row g-3" autocomplete="off" wire:submit.prevent="login_process">
+                <form class="row g-3 needs-validation" autocomplete="off" wire:submit.prevent="login_process">
                     <div class="col-12">
                         <label for="email" class="form-label">
-                            <i class="bx bxs-envelope"></i>
                             {{ __('Email Address') }}
                         </label>
-                        <input wire:model.lazy="email" type="text" class="form-control" id="email"
-                            placeholder="{{ __('Enter your email address') }}">
+
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <i class="bx bxs-envelope"></i>
+                            </div>
+                            <input wire:model.lazy="email" type="text"
+                                class="form-control @error('email') is-invalid @enderror" id="email"
+                                placeholder="{{ __('Enter your email address') }}">
+
+                            @error('email')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
                     </div>
                     <!-- /.col -->
 
                     <div class="col-12">
                         <label for="password" class="form-label">
-                            <i class="bx bxs-lock-alt"></i>
                             {{ __('Enter Password') }}
                         </label>
                         <div class="input-group" id="show_hide_password">
-                            <input wire:model.lazy="password" type="password" class="form-control border-end-0"
-                                id="password" value="12345678" placeholder="{{ __('Enter your password') }}">
-                            <a href="javascript:void(0)" class="input-group-text bg-transparent">
+                            <div class="input-group-text toggle" title="Show or hide password">
                                 <i class='bx bx-hide'></i>
-                            </a>
+                            </div>
+                            <input wire:model.lazy="password" type="password"
+                                class="form-control @error('password') is-invalid @enderror" id="password"
+                                value="12345678" placeholder="{{ __('Enter your password') }}">
+                            @error('password')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
+
+
                     </div>
                     <!-- /.col -->
 
@@ -59,3 +79,22 @@
     <!-- /.card -->
 </div>
 <!-- /.card -->
+
+@push('dynamic_js')
+    <script type="module">
+    $(document).ready(function() {
+        $("#show_hide_password .toggle").on('click', function(event) {
+            event.preventDefault();
+            if ($('#show_hide_password input').attr("type") == "text") {
+                $('#show_hide_password input').attr('type', 'password');
+                $('#show_hide_password i').addClass("bx-hide");
+                $('#show_hide_password i').removeClass("bx-show");
+            } else if ($('#show_hide_password input').attr("type") == "password") {
+                $('#show_hide_password input').attr('type', 'text');
+                $('#show_hide_password i').removeClass("bx-hide");
+                $('#show_hide_password i').addClass("bx-show");
+            }
+        });
+    });
+</script>
+@endpush
