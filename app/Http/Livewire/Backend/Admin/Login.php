@@ -38,8 +38,8 @@ class Login extends Component
 
     public function mount()
     {
-        $this->email = '';
-        $this->password = '';
+        $this->email = 'sakil@gmail.com';
+        $this->password = '12345678#';
     }
 
     /**
@@ -54,9 +54,8 @@ class Login extends Component
 
     /**
      * Login process
-     * @return \Illuminate\Http\RedirectResponse 
      */
-    public function login_process(): RedirectResponse
+    public function login_process()
     {
 
         ## Validate rules
@@ -65,11 +64,9 @@ class Login extends Component
         ## Attempt to login
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
             request()->session()->regenerate();
-            dd("ok");
-
-            return redirect()->intended('admin/dashboard');
+            return redirect()->intended('admin');
         } else {
-            dd("not ok");
+            return redirect()->back();
         }
     }
 
@@ -79,6 +76,7 @@ class Login extends Component
      */
     public function render()
     {
-        return view('livewire.backend.admin.login')->layout('livewire.backend.admin.layout');
+        $data = ['meta_title' => 'Login'];
+        return view('livewire.backend.admin.login')->layout('livewire.backend.admin.layout', $data);
     }
 }

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
     <link rel="icon" href="{{ Vite::image('favicon.png') }}" type="image/png" />
-    <title>{{ $metaTitle ?? config('app.name') }}</title>
+    <title>{{ $meta_title ?? "Home" }} | {{ config('app.name') }}</title>
 
     <!-- Google fonts -->
 
