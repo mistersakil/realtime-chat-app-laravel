@@ -10,11 +10,19 @@ class Login extends Component
     public string $email;
     public string $password;
 
-
+    /**
+     * Validation rules
+     * @var array
+     */
     protected $rules = [
         'email' => ['required', 'email'],
         'password' => ['required', 'min:8'],
     ];
+
+    /**
+     * To initialize value just for once
+     * @return void
+     */
 
     public function mount()
     {
