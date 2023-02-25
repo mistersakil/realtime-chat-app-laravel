@@ -19,7 +19,7 @@ class Login extends Component
     public function mount()
     {
         $this->email = '';
-        $this->password = '12345678';
+        $this->password = '12345678#';
     }
 
     /**
