@@ -85,18 +85,8 @@
                 <div class="chat-time">18/3/2020</div>
             </div>
         </a>
-        <a href="javascript:;" class="list-group-item">
-            <div class="d-flex">
-                <div class="chat-user-online">
-                    <img src="{{ Vite::image('avatar-1.png') }}" width="42" height="42" class="rounded-circle" alt="">
-                </div>
-                <div class="flex-grow-1 ms-2">
-                    <h6 class="mb-0 chat-title">Jonathan Sidwell</h6>
-                    <p class="mb-0 chat-msg">That's bullshit. This deal..</p>
-                </div>
-                <div class="chat-time">24/3/2020</div>
-            </div>
-        </a>
+
+
     </div>
 </div>
 <!-- /.chat-list -->

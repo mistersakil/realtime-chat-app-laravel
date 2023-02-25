@@ -68,6 +68,15 @@
             </div>
         </div>
     </div>
+    <div class="chat-content-rightside">
+        <div class="d-flex">
+            <div class="flex-grow-1 me-2">
+                <p class="mb-0 chat-time text-end">you, 3:22 PM</p>
+                <p class="chat-right-msg">codervent is the author of this admin template</p>
+            </div>
+        </div>
+    </div>
+
 
     <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
         <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
