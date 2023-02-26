@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Livewire\Backend\Admin;
+namespace App\Http\Livewire\Backend\Auth;
 
 use App\Models\User;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 
-class Login extends Component
+class ShowLoginForm extends Component
 {
     public string $email;
     public string $password;
@@ -80,6 +80,6 @@ class Login extends Component
     public function render()
     {
         $data = ['meta_title' => 'Login'];
-        return view('livewire.backend.admin.login')->layout('livewire.backend.admin.layout', $data);
+        return view('livewire.backend.auth.show-login-form');
     }
 }

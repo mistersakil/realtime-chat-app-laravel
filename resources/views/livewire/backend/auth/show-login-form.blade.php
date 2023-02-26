@@ -16,14 +16,12 @@
                                 <div class="input-group-text">
                                     <i class="bx bxs-envelope"></i>
                                 </div>
-                                <input wire:model.lazy="email" type="text"
-                                    class="form-control @error('email') is-invalid @enderror" id="email"
-                                    placeholder="{{ __('Enter your email address') }}">
+                                <input wire:model.lazy="email" type="text" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="{{ __('Enter your email address') }}">
 
                                 @error('email')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
 
@@ -38,13 +36,11 @@
                                 <div class="input-group-text toggle" title="Show or hide password">
                                     <i class='bx bx-hide'></i>
                                 </div>
-                                <input wire:model.lazy="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" id="password"
-                                    value="12345678" placeholder="{{ __('Enter your password') }}">
+                                <input wire:model.lazy="password" type="password" class="form-control @error('password') is-invalid @enderror" id="password" value="12345678" placeholder="{{ __('Enter your password') }}">
                                 @error('password')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
 
@@ -82,22 +78,7 @@
     <!-- /.card -->
 
     @push('dynamic_js')
-        <script type="module">
-$(document).ready(function() {
-    $("#show_hide_password .toggle").on('click', function(event) {
-        event.preventDefault();
-        if ($('#show_hide_password input').attr("type") == "text") {
-            $('#show_hide_password input').attr('type', 'password');
-            $('#show_hide_password i').addClass("bx-hide");
-            $('#show_hide_password i').removeClass("bx-show");
-        } else if ($('#show_hide_password input').attr("type") == "password") {
-            $('#show_hide_password input').attr('type', 'text');
-            $('#show_hide_password i').removeClass("bx-hide");
-            $('#show_hide_password i').addClass("bx-show");
-        }
-    });
-});
-</script>
+
     @endpush
 
 </div>
