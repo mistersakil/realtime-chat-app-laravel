@@ -69,7 +69,7 @@ class ShowLoginForm extends Component
             request()->session()->regenerate();
             return redirect()->intended('admin');
         } else {
-            return redirect()->back();
+            $this->dispatchBrowserEvent('invalid', ['message' => __('Invalid email or password')]);
         }
     }
 

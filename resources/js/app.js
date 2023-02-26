@@ -1,7 +1,9 @@
 import.meta.glob(["../images/**"]);
 /** HTMX */
-import htmx from "htmx.org";
-document.htmx = htmx;
+
+/* Import sweetalert2 */
+import Swal from "sweetalert2";
+window.Swal = Swal;
 
 import "./backend/pace.min";
 /* Bootstrap */
