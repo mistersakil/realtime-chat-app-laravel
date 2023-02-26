@@ -50,8 +50,8 @@
 
                         <div class="col-md-6">
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="remeber_me" checked>
-                                <label class="form-check-label" for="remeber_me">{{ __('Remember Me') }}</label>
+                                <input wire:model="remember_me" class="form-check-input" type="checkbox" id="remember_me" @if($remember_me) checked @endif />
+                                <label class="form-check-label" for="remember_me">{{ __('Remember Me') }}</label>
                             </div>
                         </div>
                         <!-- /.col -->
@@ -66,6 +66,7 @@
                         </div>
                         <!-- /.col -->
 
+
                     </form>
                     <!-- /.row -->
                 </div>
@@ -77,8 +78,6 @@
     </div>
     <!-- /.card -->
 
-    @push('dynamic_js')
 
-    @endpush
 
 </div>

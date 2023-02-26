@@ -26,8 +26,8 @@
                         <div class="mb-4 text-center">
                             <img src="{{ Vite::image('logo.png') }}" width="180" alt="" />
                         </div>
-                        <!-- content  -->
                         <livewire:backend.auth.show-login-form />
+                        <!-- /show-login-form -->
                     </div>
                     <!-- /.col -->
                 </div>

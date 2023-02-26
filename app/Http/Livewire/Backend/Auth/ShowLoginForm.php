@@ -11,6 +11,7 @@ class ShowLoginForm extends Component
 {
     public string $email;
     public string $password;
+    public bool $remember_me;
 
     /**
      * Validation rules
@@ -41,6 +42,7 @@ class ShowLoginForm extends Component
     {
         $this->email = 'sakil@gmail.com';
         $this->password = '12345678#';
+        $this->remember_me = false;
     }
 
     /**
@@ -64,8 +66,8 @@ class ShowLoginForm extends Component
 
         ## Attempt to login
         if (Auth::attemptWhen(['email' => $this->email, 'password' => $this->password], function (User $user) {
-            return $user->is_active == 2;
-        })) {
+            return $user->is_active == 1;
+        }, $this->remember_me)) {
             request()->session()->regenerate();
             return redirect()->intended('admin');
         } else {
