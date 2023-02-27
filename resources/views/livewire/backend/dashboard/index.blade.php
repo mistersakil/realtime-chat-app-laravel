@@ -6,14 +6,14 @@
                     <div class="d-flex align-items-center">
                         <div>
                             <p class="mb-0 text-secondary">Total {{ $key }}</p>
-                            <h4 class="my-1 text-info">{{ $counter }}</h4>
-                            <a href="javascript:void(0)" class="mb-0 font-13 text-info">
-                                <i class="bx bx-link align-middle"></i>
+                            <h4 class="my-1 text-dark">{{ $counter['count'] }}</h4>
+                            <a href="javascript:void(0)" class="mb-0 font-13 text-success">
+                                <i class="{{ _icons('link') }} align-middle"></i>
                                 Details
                             </a>
                         </div>
-                        <div class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto"><i
-                                class="bx bxs-cart"></i>
+                        <div class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto">
+                            <i class="{{ $counter['icon'] }}"></i>
                         </div>
                     </div>
                 </div>

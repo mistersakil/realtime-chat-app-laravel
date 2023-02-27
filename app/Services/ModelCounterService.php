@@ -2,15 +2,12 @@
 
 namespace App\Services;
 
-use Modules\User\Entities\User;
-use Modules\Asset\Entities\Asset;
-use Modules\Project\Entities\Project;
-use Modules\Employee\Entities\Employee;
-use Modules\Employee\Entities\Department;
-use Modules\Employee\Entities\Designation;
-use Modules\Employee\Entities\EmployeeType;
-use Modules\User\Entities\Role;
+use Illuminate\Support\Facades\DB;
 
+/**
+ * GeneralService
+ * @author Sakil Jomaddar <sakil.diu.cse@gmail.com>
+ */
 class ModelCounterService
 {
     /**
@@ -18,40 +15,21 @@ class ModelCounterService
      * @author Sakil Jomadder <sakil.diu.cse@gmail.com>
      */
 
-    public function counters()
+    public function get_counters(): array
     {
-        $data['users'] = [
-            'count' => User::count(),
-            'icon' => _icons('users'),
-        ];
-        $data['employees'] = [
-            'count' => Employee::count(),
-            'icon' => _icons('employee'),
-        ];
-        $data['employee type'] = [
-            'count' => EmployeeType::count(),
-            'icon' => _icons('employeeType'),
-        ];
-        $data['departments'] = [
-            'count' => Department::count(),
-            'icon' => _icons('department'),
-        ];
-        $data['designations'] = [
-            'count' => Designation::count(),
-            'icon' => _icons('designation'),
-        ];
-        $data['project'] = [
-            'count' => Project::count(),
-            'icon' => _icons('project'),
-        ];
-        $data['asset'] = [
-            'count' => Asset::count(),
-            'icon' => _icons('asset'),
-        ];
-        $data['role'] = [
-            'count' => Role::count(),
-            'icon' => _icons('role'),
-        ];
-        return $data;
+        ## Select and count from different tables
+        $counts =  DB::select("SELECT (SELECT COUNT(*) FROM conversations ) as conversations, (SELECT COUNT(*) FROM messages) as messages, (SELECT COUNT(*) FROM users) as users");
+        $countArray = (array) collect($counts)->first();
+
+        ## Loop through count list and enhance by icon & title
+        $richCounter = collect($countArray)->map(function (int $item, string $key) {
+            return [
+                'icon'  => _icons($key),
+                'title' => $key,
+                'count' => $item
+            ];
+        });
+
+        return $richCounter->toArray();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Backend\Dashboard;
 
+use App\Services\ModelCounterService;
 use Livewire\Component;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
@@ -10,13 +11,16 @@ use Illuminate\Contracts\View\View;
 class Index extends Component
 {
     public $counters;
+    private $model_counter_service;
 
     /**
      * To initialize value for once
      * @return void
      */
-    public function mount()
+    public function mount(ModelCounterService $model_counter_service): void
     {
+        $this->model_counter_service = $model_counter_service;
+
         $this->counters = $this->get_counters();
     }
 
@@ -27,9 +31,7 @@ class Index extends Component
 
     private function get_counters(): array
     {
-
-        $counts =  DB::select("SELECT (SELECT COUNT(*) FROM conversations ) as conversations, (SELECT COUNT(*) FROM messages) as messages, (SELECT COUNT(*) FROM users) as users");
-        return (array) collect($counts)->first();
+        return $this->model_counter_service->get_counters();
     }
 
     /**
@@ -38,7 +40,6 @@ class Index extends Component
      */
     public function render(): View
     {
-        // dd($this->counters);
         return view('livewire.backend.dashboard.index');
     }
 }
