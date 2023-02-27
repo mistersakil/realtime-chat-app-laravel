@@ -28,7 +28,7 @@ class Index extends Component
     private function get_counters(): array
     {
 
-        $counts =  DB::select("SELECT (SELECT COUNT(*) FROM conversations ) as conversations_count, (SELECT COUNT(*) FROM messages) as messages_count, (SELECT COUNT(*) FROM users) as users_count");
+        $counts =  DB::select("SELECT (SELECT COUNT(*) FROM conversations ) as conversations, (SELECT COUNT(*) FROM messages) as messages, (SELECT COUNT(*) FROM users) as users");
         return (array) collect($counts)->first();
     }
 
