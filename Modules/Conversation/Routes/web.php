@@ -1,16 +1,11 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Illuminate\Support\Facades\Route;
+use Modules\Conversation\Http\Controllers\ConversationController;
 
-Route::prefix('conversation')->group(function() {
-    Route::get('/', 'ConversationController@index');
+
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+
+    ## user routes
+    Route::get('conversations', [ConversationController::class, 'index'])->name('conversations');
 });
