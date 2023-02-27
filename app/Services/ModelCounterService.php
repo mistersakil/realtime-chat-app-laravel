@@ -17,7 +17,7 @@ class ModelCounterService
 
     public function get_counters(): array
     {
-        ## Select and count from different tables
+        ## Select and count table entries
         $counts =  DB::select("SELECT (SELECT COUNT(*) FROM conversations ) as conversations, (SELECT COUNT(*) FROM messages) as messages, (SELECT COUNT(*) FROM users) as users");
         $countArray = (array) collect($counts)->first();
 

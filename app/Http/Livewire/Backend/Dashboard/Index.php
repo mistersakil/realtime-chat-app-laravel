@@ -4,7 +4,6 @@ namespace App\Http\Livewire\Backend\Dashboard;
 
 use App\Services\ModelCounterService;
 use Livewire\Component;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
 
 
