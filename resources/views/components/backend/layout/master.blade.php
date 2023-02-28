@@ -19,10 +19,9 @@
 
 <body>
     <div class="wrapper">
-        <!--sidebar wrapper -->
-        @includeIf('backend.partials.sidebar')
-        <!--end sidebar wrapper -->
-        <!--start header -->
+        <livewire:backend.partials.sidebar />
+        <!-- /sidebar -->
+
         @includeIf('backend.partials.header')
         <!--end header -->
 
