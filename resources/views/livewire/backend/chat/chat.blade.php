@@ -22,7 +22,7 @@
 
 @push('dynamic_js')
 <script type="module">
-    new PerfectScrollbar('.chat-list');
-    new PerfectScrollbar('.chat-content');
+new PerfectScrollbar('.chat-list');
+new PerfectScrollbar('.chat-content');
 </script>
 @endpush

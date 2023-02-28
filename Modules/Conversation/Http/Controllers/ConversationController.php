@@ -14,7 +14,7 @@ class ConversationController extends Controller
      */
     public function index(): View
     {
-        return view('conversation::index');
+        return view('conversation::backend.conversations.index');
     }
 
     /**

@@ -22,7 +22,7 @@
             <a href="{{ route('admin.conversations') }}">
                 <div class="parent-icon"><i class="bx bx-user-circle"></i>
                 </div>
-                <div class="menu-title">Chat</div>
+                <div class="menu-title">Conversations</div>
             </a>
         </li>
 
