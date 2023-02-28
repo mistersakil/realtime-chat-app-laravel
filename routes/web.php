@@ -9,7 +9,7 @@ use App\Http\Controllers\Backend\ConversationController;
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-    ## user routes
+    ## Conversation routes
     Route::get('conversations', [ConversationController::class, 'index'])->name('conversations');
 });
 
