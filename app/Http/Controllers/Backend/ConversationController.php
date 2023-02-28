@@ -16,7 +16,7 @@ class ConversationController extends Controller
      */
     public function index(): View
     {
-        return view('livewire.backend.chat.chat', ['name' => 'sakil']);
+        return view('livewire.backend.chat.chat');
     }
 
     /**
