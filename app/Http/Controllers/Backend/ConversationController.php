@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\BackendController;
 use Illuminate\Contracts\View\View;
 
-class ConversationController extends Controller
+class ConversationController extends BackendController
 {
     /**
      * Display a listing of the resource.
