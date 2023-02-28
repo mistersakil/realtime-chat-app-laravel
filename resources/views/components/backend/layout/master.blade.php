@@ -22,8 +22,8 @@
         <livewire:backend.partials.sidebar />
         <!-- /sidebar -->
 
-        @includeIf('backend.partials.header')
-        <!--end header -->
+        <livewire:backend.partials.header />
+        <!-- /header -->
 
         <div class="page-wrapper">
             <div class="page-content">
@@ -40,16 +40,14 @@
         <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
         <!--End Back To Top Button-->
         <footer class="page-footer">
-            <p class="mb-0">Copyright © 2021. All right reserved.</p>
+            <p class="mb-0">Copyright &copy; {{ date('Y') }}. All right reserved.</p>
 
         </footer>
+        <!-- /.page-footer -->
 
         @stack('dynamic_js')
 
         @livewireScripts
-
-
-
 
     </div>
     <!-- /.wrapper -->
