@@ -1,13 +1,19 @@
 <?php
 
-use App\Http\Controllers\Backend\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\ConversationController;
 
 
 ## Backend routes
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+    ## user routes
+    Route::get('conversations', [ConversationController::class, 'index'])->name('conversations');
 });
+
+
 
 
 ## Other routes

@@ -6,15 +6,17 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Contracts\View\View;
 
 class ConversationController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * @return \Illuminate\Contracts\View\View
      */
-    public function index(): Response
+    public function index(): View
     {
-        //
+        return view('livewire.backend.chat.chat', ['name' => 'sakil']);
     }
 
     /**

@@ -1,7 +1,7 @@
 <div class="chat-sidebar-header">
     <div class="d-flex align-items-center">
         <div class="flex-grow-1 ms-2">
-            <h6 class="mb-0">Chat List</h6>
+            <h4 class="mb-0 text-muted">Conversation List</h4>
         </div>
         <div class="dropdown">
             <div class="cursor-pointer font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">
