@@ -14,6 +14,6 @@ class DashboardController extends Controller
      */
     public function index(): View
     {
-        return view('livewire.backend.dashboard.index');
+        return view('livewire.backend.dashboard.dashboard');
     }
 }
