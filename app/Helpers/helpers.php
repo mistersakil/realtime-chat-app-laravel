@@ -33,7 +33,8 @@ if (!function_exists('_icons')) {
             'link'                  => 'bx bx-link',
             'link_ln'               => 'lni lni-link',
             'conversations'         => 'bx bx-conversation',
-            'messages'              => 'lni lni-snapchat'
+            'messages'              => 'lni lni-snapchat',
+            'logout'                => 'bx bx-log-out-circle'
 
         ];
         return $iconList["$iconName"];
