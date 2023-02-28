@@ -18,9 +18,9 @@ class AuthController extends BackendController
      * showLoginForm method display user login form
      * @return \Illuminate\Contracts\View\View 
      */
-    public function show_login_form(): View
+    public function auth(): View
     {
-        return view('user::auth.show_login_form');
+        return view('livewire.backend.auth.auth');
     }
 
     /**

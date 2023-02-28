@@ -25,7 +25,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('permissions/ajax/datatable', [PermissionController::class, 'datatable'])->name('permissions.datatable');
 
     ## Auth routes
-    Route::get('login', [AuthController::class, 'show_login_form'])->name('login')->withoutMiddleware('auth');
-    Route::post('login', [AuthController::class, 'authenticate'])->name('authenticate')->withoutMiddleware('auth');
-    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+    // Route::get('login', [AuthController::class, 'show_login_form'])->name('login')->withoutMiddleware('auth');
+    // Route::post('login', [AuthController::class, 'authenticate'])->name('authenticate')->withoutMiddleware('auth');
+    // Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 });
